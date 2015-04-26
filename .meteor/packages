@@ -9,3 +9,8 @@ autopublish
 insecure
 coffeescript
 mrt:cron
+meteorhacks:npm
+
+
+npm-container
+http
