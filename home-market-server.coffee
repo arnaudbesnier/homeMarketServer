@@ -1,9 +1,6 @@
 Places = new Mongo.Collection 'places'
 
 if Meteor.isClient
-  # counter starts at 0
-  Session.setDefault 'counter', 0
-
   Template.places.helpers
     places: -> Places.find {}
     count:  -> Places.find({}).count()
@@ -11,3 +8,12 @@ if Meteor.isClient
 if Meteor.isServer
   Meteor.startup ->
     # code to run on server at startup
+
+    # NOTE: Meteor JS API - http://www.meteorpedia.com/read/REST_API
+
+    searchData = ->
+      console.log '=> Search data'
+
+    cron = new Meteor.Cron
+      events:
+        "* * * * *": searchData
