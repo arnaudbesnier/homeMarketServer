@@ -5,5 +5,6 @@ Meteor.Schemas.Place = new SimpleSchema
     type:  String,
     label: 'Source website'
   sourceLink:
-    type: String
-    label: 'Source ad link'
+    type:   String
+    label:  'Source ad link'
+    unique: true
