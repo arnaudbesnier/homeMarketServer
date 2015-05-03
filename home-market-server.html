@@ -9,5 +9,27 @@
 </body>
 
 <template name="places">
-  <p>You have {{count}} places.</p>
+  <p>{{count}} homes</p>
+
+  <h3>List</h3>
+  <table id='transaction-list' cellpadding='5'>
+    <thead>
+      <tr>
+        <th>Site</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each places}}
+        {{> place}}
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="place">
+  <tr>
+    <td>{{website}}</td>
+    <td><a href="{{link}}">{{link}}</a></td>
+  </tr>
 </template>
