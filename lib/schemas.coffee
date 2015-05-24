@@ -12,14 +12,14 @@ Meteor.Schemas.Place = new SimpleSchema
     type:         Number
     label:        'Monthly price for the rental'
     defaultValue: 0
-  # placeSize:
-  #   type          Number
-  #   label         'Home size in meters square'
-  # #   defaultValue: 0
-  # roomsNumber:
-  #   type          Number
-  #   # label         'Number of rooms'
-  #   # defaultValue: 0
+  size:
+    type:         String
+    label:        'Home size in meters square'
+    defaultValue: 0
+  roomsNumber:
+    type:         Number
+    label:        'Number of rooms'
+    defaultValue: 0
   bedroomsNumber:
     type:         Number
     label:        'Number of bedrooms'
