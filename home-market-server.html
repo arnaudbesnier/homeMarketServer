@@ -17,6 +17,11 @@
       <tr>
         <th>Source Name</th>
         <th>Source Link</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Completed</th>
+        <th>Published</th>
+        <th>Opened</th>
       </tr>
     </thead>
     <tbody>
@@ -31,5 +36,16 @@
   <tr>
     <td>{{sourceName}}</td>
     <td><a href="{{sourceLink}}">{{sourceLink}}</a></td>
+    <td>{{price}} €</td>
+    <td>{{description}}</td>
+    <td>
+      {{#if completed}}
+        true
+      {{else}}
+        false
+      {{/if}}
+    </td>
+    <td>{{published}}</td>
+    <td>{{opened}}</td>
   </tr>
 </template>
