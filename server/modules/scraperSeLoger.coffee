@@ -25,15 +25,22 @@ Meteor.startup ->
 
   retrieveAdData = ->
     console.log '=> COUNT: ' + Meteor.Places.find({ published: false }).count()
-    Meteor.Places.find({ published: false, completed: false, price: 0 }).forEach (place) ->
+    Meteor.Places.find({ published: false, completed: false }).forEach (place) ->
       placeLink = place.sourceLink
       console.log placeLink
       result = Meteor.http.get placeLink
       $ = cheerio.load result.content
 
-      price =  Math.round(Number($('#price').first().text().split('€')[0].replace(/[^\d,.]/, '').replace(',', '.')))
+      description =  $('.description').first().text()
+      price       =  Math.round(Number($('#price').first().text().split('€')[0].replace(/[^\d,.]/, '').replace(',', '.')))
+
+      console.log ' DESCRIPTION > ' + description
       console.log ' PRICE > ' + price
-      Meteor.Places.update place._id, { $set: { price: price }}
+
+      Meteor.Places.update place._id, { $set: {
+        description: description,
+        price:       price
+      }}
 
   retrieveAds = ->
     places = Meteor.Places.find().fetch()
