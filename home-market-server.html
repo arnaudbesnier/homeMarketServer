@@ -3,12 +3,10 @@
 </head>
 
 <body>
-  <h1>Places</h1>
-
-  {{> places}}
 </body>
 
-<template name="places">
+<template name="Places">
+  <h1>Places</h1>
   <p>{{count}} homes</p>
 
   <h3>List</h3>
@@ -26,15 +24,15 @@
     </thead>
     <tbody>
       {{#each places}}
-        {{> place}}
+        {{> Place}}
       {{/each}}
     </tbody>
   </table>
 </template>
 
-<template name="place">
+<template name="Place">
   <tr>
-    <td>{{sourceName}}</td>
+    <td><a href="/place/{{_id}}">{{sourceName}}</a></td>
     <td><a href="{{sourceLink}}">{{sourceLink}}</a></td>
     <td>{{price}} €</td>
     <td>{{description}}</td>
