@@ -3,83 +3,85 @@ Meteor.Schemas = {}
 Meteor.Schemas.Housing = new SimpleSchema
   type:
     type: String
-    label: ''
+    label: 'Type de logement'
     allowedValues: ['Maison', 'Appartement']
     defaultValue: ''
   size:
     type: Number
-    label: ''
+    label: 'Dimension'
     defaultValue: 0
   numberRoom:
     type: Number
-    label: ''
+    label: 'Nombre de pièces'
     defaultValue: 0
   numberBedroom:
     type: Number
-    label: ''
+    label: 'Nombre de chambres'
     defaultValue: 0
   furnished:
     type: Boolean
-    label: ''
+    label: 'Meublé'
     defaultValue: false
   description:
     type: String
-    label: ''
+    label: 'Description'
     defaultValue: ''
   heatingType:
     type: String
-    label: ''
+    label: 'Type de chauffage'
     allowedValues: ['électricité', 'gaz']
     defaultValue: ''
   heatingShare:
     type: String
-    label: ''
+    label: 'Type de chauffage'
     allowedValues: ['individuel', 'collectif']
     defaultValue: ''
   energyPerformance:
     type: String
-    label: ''
+    label: 'Performance énergétique'
     allowedValues: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     defaultValue: ''
   GESEmission:
     type: String
-    label: ''
+    label: 'Emissions de GES'
     allowedValues: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     defaultValue: ''
   addressStreet:
     type: String
-    label: ''
+    label: 'Rue'
     defaultValue: ''
   addressZipcode:
     type: String
     regEx: /^[0-9]{5}$/
-    label: ''
+    label: 'Code Postal'
     defaultValue: ''
   addressCity:
     type: String
-    label: ''
+    label: 'Ville'
     defaultValue: ''
   priceRent:
     type: Number
-    label: ''
+    label: 'Prix de location'
     defaultValue: 0
   priceCharges:
     type: Number
-    label: ''
+    label: 'Charges'
     defaultValue: 0
   priceDeposit:
     type: Number
-    label: ''
+    label: 'Caution'
     defaultValue: 0
   dateDisponibility:
     type: Date
-    label: ''
+    label: 'Date de disponibilité'
     defaultValue: new Date()
   dateCreated:
     type: Date
-    label: ''
-    defaultValue: new Date()
+    label: 'Date de création'
+    denyUpdate: true
+    autoValue: ->
+      new Date if this.isInsert
   datePublished:
     type: Date
-    label: ''
+    label: 'Date de publication'
     optional: true
