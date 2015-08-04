@@ -5,45 +5,38 @@
 <body>
 </body>
 
-<template name="Places">
-  <h1>Places</h1>
-  <p>{{count}} homes</p>
-
+<template name="Home">
+  <p>{{count}} logement(s)</p>
+  <a href="/logement">Creer mon annonce</a>
   <h3>List</h3>
   <table id='transaction-list' cellpadding='5'>
     <thead>
       <tr>
-        <th>Source Name</th>
-        <th>Source Link</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Completed</th>
-        <th>Published</th>
-        <th>Opened</th>
+        <th>Rue</th>
+        <th>Ville</th>
+        <th>Prix location</th>
+        <th>meublé</th>
+        <th>Date création</th>
       </tr>
     </thead>
     <tbody>
-      {{#each places}}
-        {{> Place}}
+      {{#each housings}}
+        {{> Housing}}
       {{/each}}
     </tbody>
   </table>
 </template>
 
-<template name="Place">
+<template name="Housing">
   <tr>
-    <td><a href="/place/{{_id}}">{{sourceName}}</a></td>
-    <td><a href="{{sourceLink}}">{{sourceLink}}</a></td>
-    <td>{{price}} €</td>
-    <td>{{description}}</td>
+    <td><a href="/logement/{{_id}}">{{addressStreet}}</a></td>
+    <td>{{addressCity}}</td>
+    <td>{{priceRent}} €</td>
     <td>
-      {{#if completed}}
-        true
-      {{else}}
-        false
+      {{#if furnished}}
+        meublé
       {{/if}}
     </td>
-    <td>{{published}}</td>
-    <td>{{opened}}</td>
+    <td>{{dateCreated}}</td>
   </tr>
 </template>

@@ -1,0 +1,26 @@
+home
+----
+
+sourceName - OK
+sourceLink - OK
+
+price - OK
+size - TODO
+rooms -
+bedrooms -
+
+pictures
+description - OK
+
+streetNumber
+streetName
+area
+district
+zipcode
+city
+
+contactName
+contactPhoneNumber
+
+opened -
+published -
