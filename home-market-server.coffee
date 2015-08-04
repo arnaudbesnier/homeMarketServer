@@ -16,5 +16,9 @@ if Meteor.isClient
     housings: -> Meteor.Housings.find {}
     count: -> Meteor.Housings.find({}).count()
 
+  Template.Home.events
+    'click .delete': ->
+      Meteor.Housings.remove @_id
+
 #if Meteor.isServer
   # NOTE: Meteor JS API - http://www.meteorpedia.com/read/REST_API
