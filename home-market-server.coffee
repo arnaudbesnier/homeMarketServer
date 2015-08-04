@@ -3,9 +3,8 @@ Meteor.Housings = new Mongo.Collection 'housings'
 
 Meteor.Housings.attachSchema Meteor.Schemas.Housing
 
-#Router.route '/', -> this.render 'Places'
 Router.route '/', -> this.render 'Home'
-Router.route '/logement/', -> this.render 'ad'
+Router.route '/logement/nouveau', -> this.render 'insertHousingForm'
 
 Router.route '/logement/:_id', ->
   housing = Meteor.Housings.findOne { _id: this.params._id }
@@ -17,8 +16,10 @@ if Meteor.isClient
     count: -> Meteor.Housings.find({}).count()
 
   Template.Home.events
-    'click .delete': ->
-      Meteor.Housings.remove @_id
+    'click .delete': -> Meteor.call 'removeHousing', @_id
 
-#if Meteor.isServer
-  # NOTE: Meteor JS API - http://www.meteorpedia.com/read/REST_API
+Meteor.methods
+  removeHousing: (id) -> Meteor.Housings.remove id
+
+Meteor.Housings.allow
+  'insert': -> return true
