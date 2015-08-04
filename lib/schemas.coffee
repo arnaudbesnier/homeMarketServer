@@ -4,6 +4,7 @@ Meteor.Schemas.Housing = new SimpleSchema
   type:
     type: String
     label: ''
+    allowedValues: ['Maison', 'Appartement']
     defaultValue: ''
   size:
     type: Number
@@ -28,18 +29,22 @@ Meteor.Schemas.Housing = new SimpleSchema
   heatingType:
     type: String
     label: ''
+    allowedValues: ['électricité', 'gaz']
     defaultValue: ''
   heatingShare:
     type: String
     label: ''
+    allowedValues: ['individuel', 'collectif']
     defaultValue: ''
   energyPerformance:
     type: String
     label: ''
+    allowedValues: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     defaultValue: ''
   GESEmission:
     type: String
     label: ''
+    allowedValues: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     defaultValue: ''
   addressStreet:
     type: String
