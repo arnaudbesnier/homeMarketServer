@@ -52,6 +52,7 @@ Meteor.Schemas.Housing = new SimpleSchema
     defaultValue: ''
   addressZipcode:
     type: String
+    regEx: /^[0-9]{5}$/
     label: ''
     defaultValue: ''
   addressCity:
