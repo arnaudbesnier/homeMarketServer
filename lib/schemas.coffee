@@ -10,6 +10,10 @@ Meteor.Schemas.Housing = new SimpleSchema
     type: Number
     label: 'Dimension'
     defaultValue: 0
+  furnished:
+    type: Boolean
+    label: 'Meublé'
+    defaultValue: false
   numberRoom:
     type: Number
     label: 'Nombre de pièces'
@@ -18,13 +22,22 @@ Meteor.Schemas.Housing = new SimpleSchema
     type: Number
     label: 'Nombre de chambres'
     defaultValue: 0
-  furnished:
-    type: Boolean
-    label: 'Meublé'
-    defaultValue: false
   description:
     type: String
     label: 'Description'
+    defaultValue: ''
+  addressStreet:
+    type: String
+    label: 'Rue'
+    defaultValue: ''
+  addressZipcode:
+    type: String
+    regEx: /^[0-9]{5}$/
+    label: 'Code Postal'
+    defaultValue: ''
+  addressCity:
+    type: String
+    label: 'Ville'
     defaultValue: ''
   heatingType:
     type: String
@@ -46,22 +59,9 @@ Meteor.Schemas.Housing = new SimpleSchema
     label: 'Emissions de GES'
     allowedValues: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     defaultValue: ''
-  addressStreet:
-    type: String
-    label: 'Rue'
-    defaultValue: ''
-  addressZipcode:
-    type: String
-    regEx: /^[0-9]{5}$/
-    label: 'Code Postal'
-    defaultValue: ''
-  addressCity:
-    type: String
-    label: 'Ville'
-    defaultValue: ''
   priceRent:
     type: Number
-    label: 'Prix de location'
+    label: 'Loyer'
     defaultValue: 0
   priceCharges:
     type: Number

@@ -1,3 +1,34 @@
 <template name="insertHousingForm">
-  {{> quickForm collection="Meteor.Housings" id="insertHousingForm" type="insert" buttonContent="Créer" omitFields="dateCreated,datePublished"}}
+  {{#autoForm collection="Meteor.Housings" id="insertHousingForm" type="insert"}}
+  <fieldset>
+    <legend>Caractéristiques Générales</legend>
+    {{> afQuickField name='type' noselect=true options="allowed"}}
+    {{> afQuickField name='size'}}
+    {{> afQuickField name='furnished' type='boolean-checkbox'}}
+    {{> afQuickField name='numberRoom' style="color: orange" label-style="color: green"}}
+    {{> afQuickField name='numberBedroom'}}
+    {{> afQuickField name='decription'}}
+  </fieldset>
+  <fieldset>
+    <legend>Adresse</legend>
+    {{> afQuickField name='addressStreet'}}
+    {{> afQuickField name='addressZipcode'}}
+    {{> afQuickField name='addressCity'}}
+  </fieldset>
+  <fieldset>
+    <legend>Energie</legend>
+    {{> afQuickField name='heatingType' noselect=true options="allowed"}}
+    {{> afQuickField name='heatingShare' noselect=true options="allowed"}}
+    {{> afQuickField name='energyPerformance' noselect=true options="allowed"}}
+    {{> afQuickField name='GESEmission' noselect=true options="allowed"}}
+  </fieldset>
+  <fieldset>
+    <legend>Modalités</legend>
+    {{> afQuickField name='priceRent'}}
+    {{> afQuickField name='priceCharges'}}
+    {{> afQuickField name='priceDeposit'}}
+    {{> afQuickField name='dateDisponibility'}}
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Créer</button>
+  {{/autoForm}}
 </template>
