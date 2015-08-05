@@ -7,7 +7,11 @@
     {{> afQuickField name='furnished' type='boolean-checkbox'}}
     {{> afQuickField name='numberRoom' style="color: orange" label-style="color: green"}}
     {{> afQuickField name='numberBedroom'}}
-    {{> afQuickField name='decription'}}
+  </fieldset>
+  <fieldset>
+    <legend>Description</legend>
+    <p>TODO Photos</p>
+    {{> afQuickField name='description'}}
   </fieldset>
   <fieldset>
     <legend>Adresse</legend>
@@ -28,6 +32,10 @@
     {{> afQuickField name='priceCharges'}}
     {{> afQuickField name='priceDeposit'}}
     {{> afQuickField name='dateDisponibility'}}
+  </fieldset>
+  <fieldset>
+    <legend>Légal</legend>
+    <p>TODO Attestation de propriété</p>
   </fieldset>
   <button type="submit" class="btn btn-primary">Créer</button>
   {{/autoForm}}
