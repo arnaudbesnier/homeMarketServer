@@ -4,7 +4,9 @@ Meteor.Housings = new Mongo.Collection 'housings'
 Meteor.Housings.attachSchema Meteor.Schemas.Housing
 Meteor.Housings.helpers
   priceMonthly: ->
-    @priceRent + @priceCharges
+    "#{@priceRent + @priceCharges} €"
+  title: ->
+    "#{@type} #{@numberRoom} pièce#{if @numberRoom > 1 then 's' else ''} - #{@size} m²"
 
 Router.route '/', -> this.render 'Home'
 Router.route '/logement/nouveau', -> this.render 'insertHousingForm'
