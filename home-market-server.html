@@ -7,7 +7,11 @@
 
 <template name="Home">
   <p>{{count}} logement(s)</p>
-  <a href="/logement/nouveau">Creer mon annonce</a>
+  <p>{{accountCount}} compte(s)</p>
+  {{> loginButtons}}
+  <!-- <a href="/compte/nouveau">Créer mon compte</a> -->
+  <br />
+  <a href="/logement/nouveau">Créer mon annonce</a>
   <h3>List</h3>
   <table id='transaction-list' cellpadding='5'>
     <thead>

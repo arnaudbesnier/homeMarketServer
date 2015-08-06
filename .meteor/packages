@@ -16,3 +16,6 @@ http
 aldeed:collection2
 iron:router
 aldeed:autoform
+accounts-base
+accounts-password
+accounts-ui
