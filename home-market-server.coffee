@@ -22,9 +22,6 @@ if Meteor.isClient
     count: -> Meteor.Housings.find({}).count()
     accountCount: -> Meteor.users.find({}).count()
 
-  # Template.Home.events
-  #   'click .delete': -> Meteor.call 'removeHousing', @_id
-
 Meteor.methods
   removeHousing: (id) -> Meteor.Housings.remove id
 
