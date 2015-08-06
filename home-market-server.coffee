@@ -2,6 +2,9 @@ Meteor.Housings = new Mongo.Collection 'housings'
 #Meteor.Places.remove({})
 
 Meteor.Housings.attachSchema Meteor.Schemas.Housing
+Meteor.Housings.helpers
+  priceMonthly: ->
+    @priceRent + @priceCharges
 
 Router.route '/', -> this.render 'Home'
 Router.route '/logement/nouveau', -> this.render 'insertHousingForm'
@@ -15,12 +18,12 @@ Router.route '/logement/:_id', ->
 
 if Meteor.isClient
   Template.Home.helpers
-    housings: -> Meteor.Housings.find {}
+    #housings: -> Meteor.Housings.find {}
     count: -> Meteor.Housings.find({}).count()
     accountCount: -> Meteor.users.find({}).count()
 
-  Template.Home.events
-    'click .delete': -> Meteor.call 'removeHousing', @_id
+  # Template.Home.events
+  #   'click .delete': -> Meteor.call 'removeHousing', @_id
 
 Meteor.methods
   removeHousing: (id) -> Meteor.Housings.remove id

@@ -12,37 +12,5 @@
   <!-- <a href="/compte/nouveau">Créer mon compte</a> -->
   <br />
   <a href="/logement/nouveau">Créer mon annonce</a>
-  <h3>List</h3>
-  <table id='transaction-list' cellpadding='5'>
-    <thead>
-      <tr>
-        <th>Rue</th>
-        <th>Ville</th>
-        <th>Prix location</th>
-        <th>meublé</th>
-        <th>Date création</th>
-        <th>Suppression</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each housings}}
-        {{> Housing}}
-      {{/each}}
-    </tbody>
-  </table>
-</template>
-
-<template name="Housing">
-  <tr>
-    <td><a href="/logement/{{_id}}">{{addressStreet}}</a></td>
-    <td>{{addressCity}}</td>
-    <td>{{priceRent}} €</td>
-    <td>
-      {{#if furnished}}
-        meublé
-      {{/if}}
-    </td>
-    <td>{{dateCreated}}</td>
-    <td class='delete'>X</td>
-  </tr>
+  {{> HousingIndex}}
 </template>

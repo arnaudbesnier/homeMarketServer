@@ -19,3 +19,4 @@ aldeed:autoform
 accounts-base
 accounts-password
 accounts-ui
+dburles:collection-helpers
