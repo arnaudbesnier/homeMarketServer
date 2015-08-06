@@ -22,6 +22,9 @@ Meteor.Schemas.Housing = new SimpleSchema
     type: Number
     label: 'Nombre de chambres'
     defaultValue: 0
+  picture:
+    type: String
+    defaultValue: "http://cdn.freshome.com/wp-content/uploads/2010/06/apartment-furniture-budget.jpg"
   description:
     type: String
     label: 'Description'
