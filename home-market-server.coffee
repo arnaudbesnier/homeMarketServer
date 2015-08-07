@@ -16,7 +16,7 @@ Router.route '/logement/nouveau', -> this.render 'insertHousingForm'
 
 Router.route '/logement/:_id', ->
   housing = Meteor.Housings.findOne { _id: this.params._id }
-  this.render 'Housing', { data: housing }
+  this.render 'HousingItem', { data: housing }
 
 if Meteor.isClient
   Template.Home.helpers
