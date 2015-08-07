@@ -8,8 +8,8 @@ Meteor.Housings.helpers
   title: ->
     "#{@type} #{@numberRoom} pièce#{if @numberRoom > 1 then 's' else ''} - #{@size} m²"
 
-Router.route '/', -> this.render 'Home'
-Router.route '/logement/nouveau', -> this.render 'insertHousingForm'
+Router.route '/', -> @render 'Home'
+Router.route '/logement/nouveau', -> @render 'HousingForm'
 
 # TODO: Authentication
 #https://scotch.io/tutorials/building-a-slack-clone-in-meteor-js-part-3-authentication-and-security
