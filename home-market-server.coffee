@@ -1,5 +1,5 @@
 Meteor.Housings = new Mongo.Collection 'housings'
-#Meteor.Places.remove({})
+#Meteor.Housings.remove({})
 
 Meteor.Housings.attachSchema Meteor.Schemas.Housing
 Meteor.Housings.helpers
@@ -20,7 +20,6 @@ Router.route '/logement/:_id', ->
 
 if Meteor.isClient
   Template.Home.helpers
-    #housings: -> Meteor.Housings.find {}
     count: -> Meteor.Housings.find({}).count()
     accountCount: -> Meteor.users.find({}).count()
 
