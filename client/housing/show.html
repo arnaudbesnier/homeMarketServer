@@ -1,0 +1,28 @@
+<template name="HousingShow">
+  <div id="housingShowContainer">
+    <img id="housingShowPicture" src="{{picture}}"/>
+  </div>
+    <div id="housingShowInfo">
+      <h3>{{title}}</h3>
+      <h4>Loyer : {{priceRent}} €</h4>
+      <p>Charges : {{priceCharges}} €</p>
+      <p>Caution : {{priceDeposit}} €</p>
+      <p>Disponibilité : {{dateDisponibility}}</p>
+      <p>Type : {{type}}</p>
+      <p>Surface : {{size}} m²</p>
+      {{#if furnished}}
+        <p>meublé</p>
+      {{/if}}
+      <p>Pièces : {{numberRoom}}</p>
+      <p>Chambres : {{numberBedroom}}</p>
+      <p>Description : {{description}}</p>
+      <p>Adresse:</p>
+      <p>{{addressStreet}}</p>
+      <p>{{addressZipcode}} {{addressCity}}</p>
+      <p>Chauffage energie : {{heatingType}}</p>
+      <p>Chauffage type : {{heatingShare}}</p>
+      <p>Performance énergétique: {{energyPerformance}}</p>
+      <p>Emissions GES: {{GESEmission}}</p>
+      <br />
+    </div>
+</template>
