@@ -3,14 +3,12 @@
 </head>
 
 <body>
+  <div id="header">
+    {{> loginButtons}} {{accountCount}} compte(s)
+    <p>{{count}} logement(s) <a href="/logement/nouveau">Créer mon annonce</a></p>
+  </div>
 </body>
 
 <template name="Home">
-  <p>{{count}} logement(s)</p>
-  <p>{{accountCount}} compte(s)</p>
-  {{> loginButtons}}
-  <!-- <a href="/compte/nouveau">Créer mon compte</a> -->
-  <br />
-  <a href="/logement/nouveau">Créer mon annonce</a>
   {{> HousingIndex}}
 </template>

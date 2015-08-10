@@ -19,9 +19,8 @@ Router.route '/logement/:_id', ->
   this.render 'HousingShow', { data: housing }
 
 if Meteor.isClient
-  Template.Home.helpers
-    count: -> Meteor.Housings.find({}).count()
-    accountCount: -> Meteor.users.find({}).count()
+  Template.registerHelper 'count', -> Meteor.Housings.find({}).count()
+  Template.registerHelper 'accountCount', -> Meteor.users.find({}).count()
 
 Meteor.methods
   removeHousing: (id) -> Meteor.Housings.remove id
