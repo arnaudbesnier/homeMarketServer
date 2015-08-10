@@ -4,4 +4,3 @@ if Meteor.isClient
 
   Template.HousingIndex.events
     'click .housingItemContainer': -> Router.go "/logement/#{@_id}"
-    'click .housingItemPrice': -> Meteor.call 'removeHousing', @_id
